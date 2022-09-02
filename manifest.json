@@ -1,0 +1,30 @@
+{
+    "manifest_version": 3, 
+    "name": "IG report stats",
+    "version": "1.0.0",
+    "description": "GUI for parsing instagram account reports",
+    "icons": {
+        "16": "assets/icons/icon16.png",
+        "48": "assets/icons/icon48.png",
+        "128": "assets/icons/icon128.png"
+    },
+    "permissions": [
+        "tabs", 
+        "storage"
+    ],
+    "content_scripts":[
+        {
+            "matches": ["file:///*"],
+            "js": ["scripts/content_script.js"]
+        }
+    ],
+    "action": {
+        "default_icon": {
+            "16": "assets/icons/icon16.png",
+            "48": "assets/icons/icon48.png",
+            "128": "assets/icons/icon128.png"
+        },
+        "default_title": "IG stats",
+        "default_popup": "popup/popup.html"
+    }
+}
