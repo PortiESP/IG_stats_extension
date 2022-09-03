@@ -17,7 +17,7 @@ function getSelectorList(selector){
 
 // ==========================[ Message system ]================================================>
 function setData(data){
-    sendMessage({subject: "APPEND", data})
+    sendMessage({subject: "APPEND", data, url: location.pathname})
 }
 
 function sendMessage(data, callback){

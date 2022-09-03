@@ -28,6 +28,21 @@ chrome.storage.local.get("userdata", res => {
 })
 
 
+// ======================================================[ Functions ]==================>
+
+function setData(data){
+    USERDATA = { ...USERDATA, ...data }
+    // Snapshoot
+    chrome.storage.local.set({"userdata": USERDATA}).then(console.log("Data saved..."))
+}
+
+function flushData(){
+    USERDATA = {} 
+    chrome.storage.local.remove("userdata")
+}
+
+
+
 // ======================================================[ Listener ]==================>
 chrome.runtime.onMessage.addListener( (message, sender, response) => {
 
@@ -39,19 +54,24 @@ chrome.runtime.onMessage.addListener( (message, sender, response) => {
     switch (message.subject){
         
         case "APPEND": // Append data to the USERDATA object
-            USERDATA = { ...USERDATA, ...message.data }
+            if ( message.data.path || ( USERDATA.path && message.url.includes(USERDATA.path) ) ) setData(message.data)
+            else console.warn("Path not found, data has not been set")
             break
 
-        case "FETCH":
+        case "FETCH": // Send USERDATA to sender
+            console.log("Data fetch")
+            response(USERDATA)
+            break
+
+        case "FLUSH": // Delete USERDATA content
+            flushData()
+            break
 
         default:
             console.warn("Subject not expected: ", message.subject)
             break
-
-    }
-
-    // Snapshoot
-    chrome.storage.local.set({"userdata": USERDATA}).then(console.log("Data saved..."))
+        }
+        
 
     // DEBUG
     console.log("User data: ", USERDATA)
