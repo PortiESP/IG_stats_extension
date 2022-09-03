@@ -2,23 +2,21 @@ console.log("Service worker start...")
 
 // Saved data
 let USERDATA = {
-    path: "",
-    followers: [],
-    following: [],
-    blocked: [],
-    pendingFollowRequests: [],
-    restrictedAccounts: [],
-    recentFollowRequests: [],
-    reelsTopics: [],
-    reelsSentiments: [],
-    userInfo: {},
-    userTown: "",
-    addsInterests: [],
-    loginActivity: [],
-    logoutActivity: [],
-    devices: [],
-    companiesWithMyData: [],
-    monetizable: undefined,
+    path: undefined, // ""
+    followers: undefined, // []
+    following: undefined, // []
+    blocked: undefined, // []
+    pendingFollowRequests: undefined, // []
+    restrictedAccounts: undefined, // []
+    recentFollowRequests: undefined, // []
+    reelsTopics: undefined, // []
+    reelsSentiments: undefined, // []
+    addsInterests: undefined, // []
+    loginActivity: undefined, // {}
+    logoutActivity: undefined, // {}
+    devices: undefined, // {}
+    companiesWithMyData: undefined, // []
+    monetizable: undefined, // true
 
 }
 

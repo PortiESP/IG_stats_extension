@@ -57,10 +57,6 @@ if (isReportsFile()){
             setData({ addsInterests: getSelectorList("div[role=main] table tr td:nth-child(2) > div") })
             break
 
-        case "account_based_in.html":
-            setData({ userTown: document.querySelector("div[role=main] table tr td:nth-child(2) > div").innerText })
-            break
-
         case "devices.html":
             setData( {
                 devices: [...document.querySelectorAll("div[role=main] table tbody")].map( dev => {
@@ -72,7 +68,14 @@ if (isReportsFile()){
                             } )
             } )
             break
+
+        case "blocked_accounts.html":
+            setData({ blocked: getSelectorList("a[href*='www.instagram.com/']") })
+            break
             
+        case "eligibility.html":
+            setData({ monetizable: document.querySelector("div[role=main] table tr:nth-child(2) td:nth-child(2) > div").innerText === "Eligible" })
+            break   
                 
     }
 }
