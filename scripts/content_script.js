@@ -17,7 +17,7 @@ function getSelectorList(selector){
 
 // ==========================[ Message system ]================================================>
 function setData(data){
-    sendMessage({subject: "ADD", data})
+    sendMessage({subject: "APPEND", data})
 }
 
 function sendMessage(data, callback){
@@ -75,7 +75,61 @@ if (isReportsFile()){
             
         case "eligibility.html":
             setData({ monetizable: document.querySelector("div[role=main] table tr:nth-child(2) td:nth-child(2) > div").innerText === "Eligible" })
-            break   
+            break 
+
+        case "pending_follow_requests.html":
+            setData({ pendingFollowRequests: getSelectorList("a[href*='www.instagram.com/']") })
+            break
+
+        case "recent_follow_requests.html":
+            setData({ recentFollowRequests: getSelectorList("a[href*='www.instagram.com/']") })
+            break
+
+        case "restricted_accounts.html":
+            setData({ restrictedAccounts: getSelectorList("a[href*='www.instagram.com/']") })
+            break
+
+        case "recently_unfollowed_accounts.html":
+            setData({ recentlyUnfollowed: getSelectorList("a[href*='www.instagram.com/']") })
+            break
+
+        case "advertisers_using_your_activity_or_information.html":
+            setData({ companiesWithMyData: getSelectorList("tbody tr td:first-child strong") })
+            break
+
+        case "login_activity.html":
+            setData(
+                {
+                    loginActivity:[...document.querySelectorAll("div[role=main] > div tbody")].map( log=> {
+                        const fields = [...log.querySelectorAll("tr td:nth-child(2)")].map(e => e.innerText)
+                        return {
+                            cookie: fields[0],
+                            ip: fields[1],
+                            lang: fields[2],
+                            time: fields[3],
+                            userAgent: fields[4],
+                        }
+                    })    
+                }
+            )
+            break
+
+        case "logout_activity.html":
+            setData(
+                {
+                    logoutActivity:[...document.querySelectorAll("div[role=main] > div tbody")].map( log=> {
+                        const fields = [...log.querySelectorAll("tr td:nth-child(2)")].map(e => e.innerText)
+                        return {
+                            cookie: fields[0],
+                            ip: fields[1],
+                            lang: fields[2],
+                            time: fields[3],
+                            userAgent: fields[4],
+                        }
+                    })    
+                }
+            )
+            break
                 
     }
 }

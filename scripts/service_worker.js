@@ -9,6 +9,7 @@ let USERDATA = {
     pendingFollowRequests: undefined, // []
     restrictedAccounts: undefined, // []
     recentFollowRequests: undefined, // []
+    recentlyUnfollowed: undefined, // []
     reelsTopics: undefined, // []
     reelsSentiments: undefined, // []
     addsInterests: undefined, // []
@@ -37,9 +38,11 @@ chrome.runtime.onMessage.addListener( (message, sender, response) => {
     // Manage messages by subject
     switch (message.subject){
         
-        case "ADD":
+        case "APPEND": // Append data to the USERDATA object
             USERDATA = { ...USERDATA, ...message.data }
             break
+
+        case "FETCH":
 
         default:
             console.warn("Subject not expected: ", message.subject)
