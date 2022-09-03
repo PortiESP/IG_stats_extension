@@ -12,6 +12,9 @@
         "tabs", 
         "storage"
     ],
+    "background": {
+        "service_worker": "./scripts/service_worker.js"
+    },
     "content_scripts":[
         {
             "matches": ["file:///*"],
