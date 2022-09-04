@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./activity.css">
+    <title>Activity</title>
+</head>
+<body>
+    
+    <div class="wrap">
+        <h1>Activity list</h1>
+        <div class="div__list">
+        
+        </div>
+
+    </div>
+
+    
+    <template class="template__activityitem">
+        <div class="div__activity_item" title="test"> 
+            <div class="div__activity_data">
+                <div><span class="span__label">Partial cookie: </span><span class="span__data">No data</span></div>
+                <div><span class="span__label">IP: </span><span class="span__data">No data</span></div>
+                <div><span class="span__label">Language: </span><span class="span__data">No data</span></div>
+                <div><span class="span__label">Time and date: </span><span class="span__data">No data</span></div>
+                <div><span class="span__label">User agent: </span><span class="span__data">No data</span></div>
+            </div>
+            <div class="div__activity_address">
+
+                <h2>IP Address data</h2>
+                <div class="div__message">Click to fetch data</div>
+                <div class="div__blur">
+                    <div class="div__address_data"><span class="span__label">ISP: </span><span class="span__data isp">No data</span></div>
+                    <div class="div__address_data"><span class="span__label">Location: </span><span class="span__data loc">No data</span></div>
+                    <a class="a__address shodan" target="_blank" href="https://www.shodan.io/dashboard"><button>Search in shodan</button></a>
+                    <a class="a__address maps" target="_blank" href="https://www.google.es/maps/"><button>Search in maps</button></a>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script src="./activity.js"></script>
+</body>
+</html>

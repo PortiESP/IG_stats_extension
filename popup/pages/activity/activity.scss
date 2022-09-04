@@ -1,0 +1,161 @@
+@font-face {
+    font-family:"cubano";
+    src:url("https://use.typekit.net/af/a171c7/00000000000000007735a084/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),url("https://use.typekit.net/af/a171c7/00000000000000007735a084/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),url("https://use.typekit.net/af/a171c7/00000000000000007735a084/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+    font-display:auto;font-style:normal;font-weight:400;font-stretch:normal;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-size: 1rem;
+    min-height: 100vh;
+    background: linear-gradient(90deg, #8F00FF 17.26%, #DB00FF 51.6%, #FFC700 105.12%, #FFFFFF 117.61%);
+}
+
+.wrap{
+    position: relative;
+    padding-top: 20px;
+    font-size: 1rem;
+
+    & h1{
+        text-align: center;
+        font-family: "Cubano",  'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        color: white;
+        font-size: 3em;
+        filter:  drop-shadow(1px 1px 5px black);
+    }
+}
+
+
+.div__list{
+    background: #eee;
+    width: 80vw;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px black;
+}
+
+
+.div__activity_item{
+    position: relative;
+    width: 100%;
+    display: flex;
+    
+    border-bottom: 1px solid gray;
+    padding: 10px;
+    font-family: 'Courier New', Courier, monospace;
+
+    & .div__activity_data{
+        position: relative;
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding-right: 10px;
+        gap: 8px;
+        
+        & > div{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            background: #ddd;
+            padding: 4px 10px;
+            border-radius: 10px;
+
+            & .span__label{
+                font-weight: 500;
+                width: 25%;
+            }
+            & .span__data{
+                width: 70%;
+                color: #888;
+                text-align: end;
+            }
+            
+        }
+    }
+
+    & .div__activity_address{
+        position: relative;
+        width: 40%;
+        padding: 0 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-left: 1px solid #aaa;
+
+        & h2{
+            margin: 4px 0;
+            text-align: center;
+        }
+
+        & .div__address_data{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            background: #ddd;
+            padding: 4px 10px;
+            border-radius: 10px;
+
+            & .span__label{
+                font-weight: 500;
+                width: 25%;
+            }
+            & .span__data{
+                width: 70%;
+                color: #888;
+                text-align: end;
+            }
+            
+        }
+
+        & a{
+            display: block;
+            width: 100%;
+        }
+        & button{
+            width: 100%;
+            padding: 10px;
+            background: #a00;
+            color: white;
+            font-weight: 600;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            &:hover{
+                background-color: #f00;
+            }
+        }
+    }
+}
+
+.div__message{
+    position: absolute;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ddd;
+    border-radius: 4px;
+
+    z-index: 1;
+
+    &:hover{
+        background: white;
+    }
+}
+
+.div__blur{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    filter: blur(10px);
+    pointer-events: none;
+}

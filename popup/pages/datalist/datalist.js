@@ -19,6 +19,10 @@ chrome.storage.local.get("userdata", res => {
         case "?myInterests":
             createList([...USERDATA.addsInterests, ...USERDATA.reelsTopics])
             break
+
+        case "?activity":
+            createActivityList(USERDATA.loginActivity)
+            break   
     }
 })
 
@@ -37,4 +41,10 @@ function createList(items){
         $list.lastElementChild.onclick = () => chrome.tabs.create( { url: "https://www.instagram.com/" + user } )
     })
 }
-// 
+
+
+function createActivityList(items){
+    const $card = document.createElement("div")
+    $card.className = "div__activity_item"
+    
+}

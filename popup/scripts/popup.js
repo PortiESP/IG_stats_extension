@@ -1,6 +1,6 @@
 
 function setToolListener(param){
-    chrome.tabs.create({url: `popup/pages/datalist/datalist.html?${param}`})
+    chrome.tabs.create({url: `popup/pages/${param}`})
     .then( tab => {
         console.log(tab)
         chrome.tabs.sendMessage( tab.id, { message: USERDATA } )
@@ -25,6 +25,6 @@ document.querySelector(".button__deleteData").onclick = () => {
     }
 }
 
-document.querySelectorAll(".div__stats_item")[0].onclick = () => setToolListener("notFollowingBack")
-document.querySelectorAll(".div__stats_item")[1].onclick = () => setToolListener("myInterests")
-document.querySelectorAll(".div__stats_item")[2].onclick = () => setToolListener("activity")
+document.querySelectorAll(".div__stats_item")[0].onclick = () => setToolListener("datalist/datalist.html?notFollowingBack")
+document.querySelectorAll(".div__stats_item")[1].onclick = () => setToolListener("datalist/datalist.html?myInterests")
+document.querySelectorAll(".div__stats_item")[2].onclick = () => setToolListener("activity/activity.html?login")

@@ -8,11 +8,11 @@ body{
     margin: 0;
     font-size: 1rem;
     min-height: 100vh;
+    background: linear-gradient(90deg, #8F00FF 17.26%, #DB00FF 51.6%, #FFC700 105.12%, #FFFFFF 117.61%);
 }
 
 .wrap{
     position: relative;
-    background: linear-gradient(90deg, #8F00FF 17.26%, #DB00FF 51.6%, #FFC700 105.12%, #FFFFFF 117.61%);
     padding-top: 20px;
 
     & h1{
