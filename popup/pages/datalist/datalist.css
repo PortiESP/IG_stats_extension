@@ -1,0 +1,51 @@
+@font-face {
+  font-family: "cubano";
+  src: url("https://use.typekit.net/af/a171c7/00000000000000007735a084/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"), url("https://use.typekit.net/af/a171c7/00000000000000007735a084/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"), url("https://use.typekit.net/af/a171c7/00000000000000007735a084/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+  font-display: auto;
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+}
+body {
+  margin: 0;
+  font-size: 1rem;
+  min-height: 100vh;
+}
+
+.wrap {
+  position: relative;
+  background: linear-gradient(90deg, #8F00FF 17.26%, #DB00FF 51.6%, #FFC700 105.12%, #FFFFFF 117.61%);
+  padding-top: 20px;
+}
+.wrap h1 {
+  text-align: center;
+  font-family: "Cubano", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: white;
+  font-size: 3em;
+  filter: drop-shadow(1px 1px 5px black);
+}
+
+.div__list {
+  position: relative;
+  width: 40%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 30px;
+}
+
+.div__userlist_item {
+  position: relative;
+  background: #eee;
+  border-radius: 10px;
+  box-shadow: 0 0 10px black;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  margin: 5px 0;
+  padding: 10px 20px;
+  font-size: 1em;
+}
+.div__userlist_item:hover {
+  background: #ddd;
+}/*# sourceMappingURL=datalist.css.map */
