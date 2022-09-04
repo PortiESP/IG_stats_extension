@@ -1,0 +1,3 @@
+- Docs
+- Full screen GUI
+- More stats
