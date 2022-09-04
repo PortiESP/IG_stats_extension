@@ -16,6 +16,9 @@ chrome.storage.local.get("userdata", res => {
         case "?pendingRequests":
             createList(USERDATA.pendingFollowRequests)
             break
+        case "?myInterests":
+            createList([...USERDATA.addsInterests, ...USERDATA.reelsTopics])
+            break
     }
 })
 
