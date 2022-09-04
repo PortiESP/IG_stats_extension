@@ -271,3 +271,12 @@ header{
         background: #a00;
     }
 }
+
+
+
+.a__summary_item{
+    text-decoration: none;
+
+    & span:nth-child(1){color: black;}
+    & span:nth-child(2){color: gray;}
+}

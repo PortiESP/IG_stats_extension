@@ -232,4 +232,14 @@ header svg:hover {
 }
 .button__deleteData:hover {
   background: #a00;
+}
+
+.a__summary_item {
+  text-decoration: none;
+}
+.a__summary_item span:nth-child(1) {
+  color: black;
+}
+.a__summary_item span:nth-child(2) {
+  color: gray;
 }/*# sourceMappingURL=popup_styles.css.map */
