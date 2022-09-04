@@ -34,6 +34,7 @@ document.querySelector(".button__deleteData").onclick = () => {
 }
 
 window.addEventListener("DOMContentLoaded", ()=>{
+    document.querySelector(".svg__fullicon").onclick = () => setToolListener("fullmenu/fullmenu.html")
     
     document.querySelectorAll(".div__stats_item")[0].onclick = () => setToolListener("datalist/datalist.html?notFollowingBack")
     document.querySelectorAll(".div__stats_item")[1].onclick = () => setToolListener("datalist/datalist.html?myInterests")
