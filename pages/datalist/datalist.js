@@ -3,7 +3,7 @@ const $list = document.querySelector(".div__list")
 const $itemTemplate = document.querySelector(".template__listitem").content
 
 let USERDATA = {}
-chrome.storage.local.get("userdata", res => {
+chrome.runtime.sendMessage({subject: "FETCH"}, res => {
     USERDATA = res["userdata"]
 
     switch(location.search){ // Utility lists
@@ -17,7 +17,15 @@ chrome.storage.local.get("userdata", res => {
             createList(USERDATA.pendingFollowRequests)
             break
         case "?myInterests":
-            createList([...USERDATA.addsInterests, ...USERDATA.reelsTopics])
+            createList(USERDATA.addsInterests && USERDATA.reelsTopics || [...USERDATA.addsInterests, ...USERDATA.reelsTopics])
+            break
+
+        case "?blocked":
+            createList(USERDATA.blocked || [...USERDATA.blocked])
+            break
+
+        case "?devices":
+            createList(USERDATA.devices || [...USERDATA.devices])
             break
 
         case "?activity":
@@ -28,11 +36,23 @@ chrome.storage.local.get("userdata", res => {
 
 // ===================[ Functions ]==========================>
 function list1notIn2(list1, list2){ // Return items from 1 not in 2
-    return list1.filter( user => !list2.includes(user) )
+    
+    if (list1 === undefined || list2 === undefined) return undefined
+    return (list1).filter( user => !list2.includes(user) )
 }
 
 
 function createList(items){
+
+    if (items === undefined){
+        $list.innerHTML = "<h2 class='h2__err'>Data not fetched</h2>"
+        return false
+    }
+    else if (!items.length){
+        $list.innerHTML = "<h2 class='h2__err'>Empty dataset</h2>"
+        return false
+    }
+
     document.querySelector(".wrap h1").innerText += ` (${items.length})`
     items.map( user => {
         $itemTemplate.querySelector("a").innerText = user

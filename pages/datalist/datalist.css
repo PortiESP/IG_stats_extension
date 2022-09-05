@@ -41,4 +41,13 @@ body {
 }
 .div__userlist_item:hover {
   background: #ddd;
+}
+
+.h2__err {
+  color: white;
+  background: #a00;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 10px;
+  text-align: center;
 }/*# sourceMappingURL=datalist.css.map */

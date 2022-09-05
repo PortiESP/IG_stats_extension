@@ -43,7 +43,7 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  padding-right: 10px;
+  padding-right: 30px;
   gap: 8px;
 }
 .div__activity_item .div__activity_data > div {
