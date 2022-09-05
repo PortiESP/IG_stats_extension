@@ -4,7 +4,7 @@ function setToolListener(param){
     .then( tab => {
         console.log(tab)
         chrome.tabs.sendMessage( tab.id, { message: USERDATA } )
-    })
+    }).catch(err => console.error(err))
 }
 
 
